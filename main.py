@@ -14,6 +14,7 @@ app = Flask(__name__)
 # SQLAlchemy stuff. Setup PostgreSQL databasee
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'postgres://user:password@host:5432/dbname').replace('postgres://', 'postgresql://')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False # NOTE: Avoids error. Weird artifact of Flask.
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', '') # Needed for production Flask applications.
 
 db = SQLAlchemy(app)
 
