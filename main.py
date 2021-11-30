@@ -9,7 +9,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
 from werkzeug.security import generate_password_hash, check_password_hash # Flask login
-from flask_login import LoginManager, login_user, current_user, login_required
+from flask_login import LoginManager, login_user, logout_user, current_user, login_required
 
 app = Flask(__name__)
 
@@ -17,6 +17,7 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'postgres://xmxcxgpzeokbkp:8ea257b512ff268ebbd5475687c56236fd736c7d42e09439d89356ea7cf95906@ec2-3-230-199-240.compute-1.amazonaws.com:5432/d5gcfo146dri26').replace('postgres://', 'postgresql://')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False # NOTE: Avoids error. Weird artifact of Flask.
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', '') # Needed for production Flask applications.
+print("SECRET KEY = ", os.environ.get('SECRET_KEY', ''))
 
 db = SQLAlchemy(app)
 
@@ -183,3 +184,18 @@ def login():
 
     # User wants to GET the login page, so we just render the template
     return render_template('login.html')
+
+@app.route('/logout', methods=['POST', 'GET'])
+def logout():
+    """
+    The page for the user to log in to the RISE ABOVE site.
+    NOTE: Inspired by: https://www.digitalocean.com/community/tutorials/how-to-add-authentication-to-your-app-with-flask-login
+    """
+    if request.method == 'POST':
+        #print("LOG OUT. . .")
+        # TODO: Log the user out
+        logout_user()
+        # Redirect to home page
+        return redirect(url_for('home'))
+
+    return render_template('logout.html')
