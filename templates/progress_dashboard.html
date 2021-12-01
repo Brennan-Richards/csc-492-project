@@ -2,10 +2,17 @@
 {% extends "course_base.html" %}
 
 {% block course_content %}
-
+<!-- Rebuild the sidebar highlighting the Progress Dashboard as the currently selected dashboard -->
+<div class="col-lg-2">
+    <div class="sidebar">
+        <a href="{{ url_for('course_list') }}">Courses</a>
+        <a class="active" href="{{ url_for('progress_dashboard') }}">Progress Dashboard</a>
+        </div>
+</div>
 
 <div class="row">
     <div class="col-lg-8 offset-lg-3">
+        <a href="/rating" class="btn btn-lg btn-outline-secondary mt-3">Go to ratings page</a>
         <div class="card p-3 mt-5">
             {{ plot|safe }}
         </div>
