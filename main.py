@@ -230,8 +230,7 @@ def login():
 @app.route('/logout', methods=['POST', 'GET'])
 def logout():
     """
-    The page for the user to log in to the RISE ABOVE site.
-    NOTE: Inspired by: https://www.digitalocean.com/community/tutorials/how-to-add-authentication-to-your-app-with-flask-login
+    The page for the user to log out of the RISE ABOVE site.
     """
     if request.method == 'POST':
         #print("LOG OUT. . .")
