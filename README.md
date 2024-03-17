@@ -1,5 +1,5 @@
-# CSC492 Semester Long Project
-Final project repository for CSC 492 group of Nick, Sabah, Brennan and Ruifang.
+## Application's purpose
+The purpose of this application is to enable patients with seizure disorders to have easy access to educational resources that assist them with navigating and managing the emotional aspects of the disorder.
 
 ## Overview
 This application is written in Flask, a web development framework written in Python. It uses virtual environments for package management.
