@@ -6,6 +6,8 @@ This application is written in Flask, a web development framework written in Pyt
 
 A visualization of tasks and application architecture is available via this [Figma whiteboard](https://www.figma.com/file/lHswI2yQxbDxS8nV8eekAt/Engineering-Whiteboard?node-id=36%3A14).
 
+For information on iterative development milestones for this project, please visit the following page: https://brennan-richards.github.io/csc-492-project/.
+
 ### Setup 
 To get access to the code, navigate to the directory on your local machine in which you want the code/repo to be stored, and run: ```$ git clone https://github.com/Brennan-Richards/csc-492-project.git```. You can then create branches, add files, push back to the repository, etc.
 
